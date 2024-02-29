@@ -52,6 +52,7 @@ export default function ImageSrollbar({ data }) {
                         height={400}
                         sizes="(max-width: 500px) 100px, (max-width: 1023px) 400px, 1000px"
                         objectFit="cover"
+                        loading="lazy"
                     />
                 </Box>
             ))}

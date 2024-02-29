@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Flex, Box, Text, Button } from '@chakra-ui/react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import Property from '../components/Property';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
@@ -17,7 +18,14 @@ export const Banner = ({
 }) => (
     <Flex flexWrap="wrap" justifyContent="center" alignItems="center" m="10">
         <Box borderRadius="10px" overflow="hidden">
-            <Image src={imageUrl} width={500} height={300} />
+            {/* <Image src={imageUrl} width={500} height={300} loading="lazy" /> */}
+            <LazyLoadImage
+                src={imageUrl}
+                width={500}
+                height={300}
+                placeholderSrc={imageUrl}
+                effect="blur"
+            />
         </Box>
         <Box p="5">
             <Text color="gray.500" fontSize="sm" fontWeight="medium">

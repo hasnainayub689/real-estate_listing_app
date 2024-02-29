@@ -23,7 +23,7 @@ const Property = ({
         externalID,
     },
 }) => (
-    <Link href={`/property/${externalID}`} passHref={true} legacyBehavior>
+    <Link href={`/property/${externalID}`} passHref={true}>
         <Flex
             flexWrap="wrap"
             w="420px"
@@ -43,7 +43,10 @@ const Property = ({
             >
                 <Image
                     src={coverPhoto ? coverPhoto.url : DefaultImage}
-                    layout="fill"
+                    alt={title} // Add alt prop for accessibility
+                    width={400} // Set width explicitly
+                    height={260} // Set height explicitly
+                    loading="lazy"
                 />
             </Box>
             <Box w="full">
